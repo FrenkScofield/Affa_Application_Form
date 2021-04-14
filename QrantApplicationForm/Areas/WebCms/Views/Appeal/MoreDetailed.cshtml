@@ -1,0 +1,170 @@
+﻿@model QrantApplicationForm.Models.VM.ViewModel
+@{
+    ViewData["Title"] = "MoreDetailed";
+    Layout = "~/Areas/WebCms/Views/Shared/_Layout.cshtml";
+}
+
+    <div class="row">
+        <div class="col-md-6 my-4">
+            <div class="card shadow mb-4">
+                <div class="card-header py-4">
+                    Muracietin etrafi goruntusu  <a asp-action="Index" class="float-right btn btn-outline-secondary">Geri cix</a>
+                </div>
+                <div class="card-body">
+                    <form asp-action="MoreDetailed">
+                        <input type="hidden" asp-for="ApplicationForm.Id" />
+
+                        <div class="form-group">
+                            <label asp-for="ApplicationForm.Id" class="control-label">Num</label>
+                            <input type="text" asp-for="ApplicationForm.Id" class="form-control" disabled />
+
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="ApplicationForm.AboutProject" class="control-label">Layihəniz haqqında məlumat</label>
+                            <textarea type="text" class="form-control" disabled />@Model.ApplicationForm.AboutProject </textarea>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="ApplicationForm.AppNameSurane" class="control-label">Müraciət edənin adı, soyadı və ata adı</label>
+                            <input type="text" asp-for="ApplicationForm.AppNameSurane" class="form-control" disabled />
+
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="ApplicationForm.AppOrganizationRepresented" class="control-label">Müraciət edənin təmsil etdiyi təşkilat</label>
+                            <input type="text" asp-for="ApplicationForm.AppOrganizationRepresented" class="form-control" disabled />
+
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="ApplicationForm.TypeActivityOrganization" class="control-label">Təşkilatın fəaliyyət növü</label>
+                            <input type="text" asp-for="ApplicationForm.TypeActivityOrganization" class="form-control" disabled />
+
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="ApplicationForm.ProjectsImplemented" class="control-label">Hal-hazırda və ya son 3 il ərzində icra etdiyiniz layihələr</label>
+                            <input type="text" asp-for="ApplicationForm.ProjectsImplemented" class="form-control" disabled />
+
+                        </div>
+
+                        <div class="form-group">
+                            <label asp-for="ApplicationForm.WorkDoneWithinProject" class="control-label">Layihə çərçivəsində görülən və ya görüləcək işlər</label>
+                            <input type="text" asp-for="ApplicationForm.WorkDoneWithinProject" class="form-control" disabled />
+
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="ApplicationForm.PurposeOfProject" class="control-label">Layihənin məqsəd və vəzifələri</label>
+                            <input type="text" asp-for="ApplicationForm.PurposeOfProject" class="form-control" disabled />
+
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="ApplicationForm.Beneficiaries" class="control-label">Faydalananlar</label>
+                            <input type="text" asp-for="ApplicationForm.Beneficiaries" class="form-control" disabled />
+
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="ApplicationForm.ResultsYouGetFromProject" class="control-label">Layihədən aldığınız və ya gözlədiyiniz nəticələr və davamlılıq</label>
+                            <input type="text" asp-for="ApplicationForm.ResultsYouGetFromProject" class="form-control" disabled />
+
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="ApplicationForm.ProjectCostDirections" class="control-label">Layihənin əsas xərc istiqamətləri</label>
+                            <input type="text" asp-for="ApplicationForm.ProjectCostDirections" class="form-control" disabled />
+
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="ApplicationForm.DoYouHaveSponsorOrSupporter" class="control-label">Hər hansısa tərəfdaş və ya sponsorunuz olduğu halda adını qeyd etməyiniz xahiş olunur</label>
+                            <input type="text" asp-for="ApplicationForm.DoYouHaveSponsorOrSupporter" class="form-control" disabled />
+
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="ApplicationForm.NameOfProjectManager" class="control-label">Layihə rəhbərinin adı </label>
+                            <input type="text" asp-for="ApplicationForm.NameOfProjectManager" class="form-control" disabled />
+
+                        </div>
+                        <div class="col-lg-5 col-md-5">
+                            @if (Model.Files.FirstOrDefault(i => i.UniqKod == Model.ApplicationForm.ImageCode)?.Type == "application/pdf")
+                            {
+                                <a href="~/img/@Model.Files.FirstOrDefault(i=>i.UniqKod == Model.ApplicationForm.ImageCode)?.UrlFile">CV.PDF</a>
+
+                            }
+
+                            else if (Model.Files.FirstOrDefault(i => i.UniqKod == Model.ApplicationForm.ImageCode)?.Type == "text/plain" ||
+                                     Model.Files.FirstOrDefault(i => i.UniqKod == Model.ApplicationForm.ImageCode)?.Type == "application/msword" ||
+                                     Model.Files.FirstOrDefault(i => i.UniqKod == Model.ApplicationForm.ImageCode)?.Type == "application/x-dos_ms_word" ||
+                                     Model.Files.FirstOrDefault(i => i.UniqKod == Model.ApplicationForm.ImageCode)?.Type == "application/vnd.ms-excel" ||
+                                     Model.Files.FirstOrDefault(i => i.UniqKod == Model.ApplicationForm.ImageCode)?.Type == "application/vnd.openxmlformats-officedocument.wordprocessingml.document")
+                            {
+                                <a href="~/img/@Model.Files.FirstOrDefault(i=>i.UniqKod == Model.ApplicationForm.ImageCode)?.UrlFile">OPEN FILE</a>
+                            }
+                            else if (Model.Files.FirstOrDefault(i => i.UniqKod == Model.ApplicationForm.ImageCode)?.Type == "image/jpg" ||
+                            Model.Files.FirstOrDefault(i => i.UniqKod == Model.ApplicationForm.ImageCode)?.Type == "image/jpeg" ||
+                            Model.Files.FirstOrDefault(i => i.UniqKod == Model.ApplicationForm.ImageCode)?.Type == "image/png")
+                            {
+                                <img src="~/img/@Model.Files.FirstOrDefault(i => i.UniqKod == Model.ApplicationForm.ImageCode)?.UrlFile" id="img1" height="190" style="margin-bottom: 20px;" alt="Loqo sekli yoxdur">
+
+                            }
+                        </div>
+
+                        <div class="form-group">
+                            <label asp-for="ApplicationForm.ActionPlan" class="control-label">Fəaliyyət planı haqqinda</label>
+                            <input type="text" asp-for="ApplicationForm.ActionPlan" class="form-control" disabled />
+
+                        </div>
+                        <div class="col-lg-5 col-md-5">
+                            @if (Model.Files.FirstOrDefault(i => i.UniqKod == Model.ApplicationForm.VideoCode)?.Type == "video/mp4")
+                            {
+                                <video width="500" height="350" controls id="img1" src="~/img/@Model.Files.FirstOrDefault(i => i.UniqKod == Model.ApplicationForm.VideoCode)?.UrlFile"> </video>
+                            }
+                            else if (Model.Files.FirstOrDefault(i => i.UniqKod == Model.ApplicationForm.VideoCode)?.Type == "text/plain" ||
+                                     Model.Files.FirstOrDefault(i => i.UniqKod == Model.ApplicationForm.VideoCode)?.Type == "application/pdf" ||
+                                      Model.Files.FirstOrDefault(i => i.UniqKod == Model.ApplicationForm.VideoCode)?.Type == "application/msword" ||
+                                      Model.Files.FirstOrDefault(i => i.UniqKod == Model.ApplicationForm.VideoCode)?.Type == "application/x-dos_ms_word" ||
+                                      Model.Files.FirstOrDefault(i => i.UniqKod == Model.ApplicationForm.VideoCode)?.Type == "application/vnd.ms-excel" ||
+                                      Model.Files.FirstOrDefault(i => i.UniqKod == Model.ApplicationForm.VideoCode)?.Type == "application/vnd.openxmlformats-officedocument.wordprocessingml.document")
+                            {
+                                <a href="~/img/@Model.Files.FirstOrDefault(i=>i.UniqKod == Model.ApplicationForm.VideoCode)?.UrlFile">OPEN FILE</a>
+                            }
+                            else if (Model.Files.FirstOrDefault(i => i.UniqKod == Model.ApplicationForm.VideoCode)?.Type == "image/jpg" ||
+                            Model.Files.FirstOrDefault(i => i.UniqKod == Model.ApplicationForm.VideoCode)?.Type == "image/jpeg" ||
+                            Model.Files.FirstOrDefault(i => i.UniqKod == Model.ApplicationForm.VideoCode)?.Type == "image/png")
+                            {
+                                <img src="~/img/@Model.Files.FirstOrDefault(i => i.UniqKod == Model.ApplicationForm.VideoCode)?.UrlFile" id="img1" height="190" style="margin-bottom: 20px;" alt="Loqo sekli yoxdur">
+
+                            }
+                            else if (Model.Files.FirstOrDefault(i => i.UniqKod == Model.ApplicationForm.VideoCode)?.Type == "application/zip" ||
+                                Model.Files.FirstOrDefault(i => i.UniqKod == Model.ApplicationForm.VideoCode)?.Type == "application/vnd.rar")
+                            {
+
+                                <a href="~/img/@Model.Files.FirstOrDefault(i=>i.UniqKod == Model.ApplicationForm.VideoCode)?.UrlFile">OPEN FILE</a>
+                            }
+
+
+
+                        </div>
+
+                        <div class="form-group">
+                            <label asp-for="ApplicationForm.NameSurnameFatherName" class="control-label">Ad, Soyad və Ata adı</label>
+                            <input type="text" asp-for="ApplicationForm.NameSurnameFatherName" class="form-control" disabled />
+
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="ApplicationForm.PhoneNumber" class="control-label">Əlaqə nömrəsi</label>
+                            <input type="text" asp-for="ApplicationForm.PhoneNumber" class="form-control" disabled />
+
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="ApplicationForm.Email" class="control-label">Email</label>
+                            <input type="text" asp-for="ApplicationForm.Email" class="form-control" disabled />
+
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="ApplicationForm.Address" class="control-label">Ünvan</label>
+                            <input type="text" asp-for="ApplicationForm.Address" class="form-control" disabled />
+
+                        </div>
+
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+

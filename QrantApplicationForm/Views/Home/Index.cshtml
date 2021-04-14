@@ -1,0 +1,248 @@
+﻿@model QrantApplicationForm.Models.BLL.ApplicationForm
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Colorlib Templates">
+    <meta name="author" content="Colorlib">
+    <meta name="keywords" content="Colorlib Templates">
+
+    <title>Apply for job by Colorlib</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
+
+    <link href="~/css/main.css" rel="stylesheet" media="all">
+</head>
+
+<body>
+    <div class="page-wrapper bg-dark">
+        <div class="wrapper wrapper--w900">
+            <div class="card card-6">
+                <div class="affaLogo">
+
+                </div>
+                <div class="card-heading" style=" background-color: white; margin-bottom: 15px;">
+                    <h2 style="font-size: 25px; margin-bottom: 18px; color: #1680ef; text-align: center; line-height: 1; padding-top: 11px; " class="title">Qrant Müraciət Forması</h2>
+                </div>
+                <div class="card-body">
+                    <form asp-action="Index" method="POST" enctype="multipart/form-data">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <div class="form-row">
+
+                            <lable class="name">1. Layihə haqqında qısa məlumat</lable>
+                            <p class="appInfo">
+                                Layihəniz haqqında məlumat verməyinizi xahiş edirik:
+                                <div class="appInfo" style=" padding-left: 40px; width: 440px;     margin-bottom: 10px;">
+                                    - Qısa məzmun <br />
+                                    - Layihənin məqsədi<br />
+                                    - Hədəf kütlə (layihənin kimi əhatə etdiyini qeyd edin)<br />
+                                    - Layihənin büdcəsi (gəlirləri və xərcləri)<br />
+                                    - Layihənin müddəti<br />
+                                </div>
+                            </p>
+
+                            <div class="value">
+                                <div class="input-group">
+                                    <textarea asp-for="AboutProject" class="textarea--style-6" placeholder="Message sent to the employer" required></textarea>
+                                </div>
+                                <span asp-validation-for="AboutProject" class="text-danger"></span>
+                            </div>
+
+                        </div>
+                        <div class="form-row">
+                            <div class="name">2. Müraciət edən</div>
+                            <div class="value">
+                                <label style=" padding-left: 19px; font-family: inherit; font-size: 14px; font-weight: 500;">Müraciət edənin adı, soyadı və ata adı</label>
+                                <input asp-for="AppNameSurane" class="input--style-6" type="text" required>
+                                <span asp-validation-for="AppNameSurane" class="text-danger"></span>
+
+                            </div>
+                            <div class="value">
+                                <label style=" padding-left: 19px; font-family: inherit; font-size: 14px; font-weight: 500;">Müraciət edənin təmsil etdiyi təşkilat</label>
+                                <input asp-for="AppOrganizationRepresented" class="input--style-6" type="text" required>
+                                <span asp-validation-for="AppOrganizationRepresented" class="text-danger"></span>
+
+                            </div>
+                            <div class="value">
+                                <label style=" padding-left: 19px; font-family: inherit; font-size: 14px; font-weight: 500;">Təşkilatın fəaliyyət növü</label>
+                                <input asp-for="TypeActivityOrganization" class="input--style-6" type="text" required>
+                                <span asp-validation-for="TypeActivityOrganization" class="text-danger"></span>
+
+                            </div>
+                            <div class="value">
+                                <label style=" padding-left: 19px; font-family: inherit; font-size: 14px; font-weight: 500;">Hal-hazırda və ya son 3 il ərzində icra etdiyiniz layihələr</label>
+                                <input asp-for="ProjectsImplemented" class="input--style-6" type="text" required>
+                                <span asp-validation-for="ProjectsImplemented" class="text-danger"></span>
+
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="name">3. Layihə detalları</div>
+                            <div class="value">
+                                <label style=" padding-left: 19px; font-family: inherit; font-size: 14px; font-weight: 500;">Layihə çərçivəsində görülən və ya görüləcək işlər</label>
+                                <input asp-for="WorkDoneWithinProject" class="input--style-6" type="text" required>
+                                <span asp-validation-for="WorkDoneWithinProject" class="text-danger"></span>
+                            </div>
+                            <div class="value">
+                                <label style=" padding-left: 19px; font-family: inherit; font-size: 14px; font-weight: 500;">Layihənin məqsəd və vəzifələri</label>
+                                <input asp-for="PurposeOfProject" class="input--style-6" type="text" required>
+                                <span asp-validation-for="PurposeOfProject" class="text-danger"></span>
+                            </div>
+                            <div class="value">
+                                <label style=" padding-left: 19px; font-family: inherit; font-size: 14px; font-weight: 500;">Faydalananlar</label>
+                                <input asp-for="Beneficiaries" class="input--style-6" type="text" required>
+                                <span asp-validation-for="Beneficiaries" class="text-danger"></span>
+                            </div>
+                            <div class="value">
+                                <label style=" padding-left: 19px; font-family: inherit; font-size: 14px; font-weight: 500;">Layihədən aldığınız və ya gözlədiyiniz nəticələr və davamlılıq</label>
+                                <input asp-for="ResultsYouGetFromProject" class="input--style-6" type="text" required>
+                                <span asp-validation-for="ResultsYouGetFromProject" class="text-danger"></span>
+                            </div>
+                            <div class="value">
+                                <label style=" padding-left: 19px; font-family: inherit; font-size: 14px; font-weight: 500;">Layihənin əsas xərc istiqamətləri</label>
+                                <input asp-for="ProjectCostDirections" class="input--style-6" type="text" required>
+                                <span asp-validation-for="ProjectCostDirections" class="text-danger"></span>
+                            </div>
+                            <div class="value">
+                                <label style=" padding-left: 19px; font-family: inherit; font-size: 14px; font-weight: 500;">Hər hansısa tərəfdaş və ya sponsorunuz olduğu halda adını qeyd etməyiniz xahiş olunur</label>
+                                <input asp-for="DoYouHaveSponsorOrSupporter" class="input--style-6" type="text" required>
+                                <span asp-validation-for="DoYouHaveSponsorOrSupporter" class="text-danger"></span>
+                            </div>
+                            <div class="value">
+                                <label style=" padding-left: 19px; font-family: inherit; font-size: 14px; font-weight: 500;">Layihə rəhbərinin adı və CV-si</label>
+                                <input asp-for="NameOfProjectManager" class="input--style-6" type="text" required>
+                                <span asp-validation-for="NameOfProjectManager" class="text-danger"></span>
+                            </div>
+                            <div style="margin-top: 12px;" class="custom-file">
+                                <label class="custom-file-upload">CV-i Yukle </label>
+                                <input type="file" name="file" accept="application/pdf, image/jpeg, image/png, image/jpg,	application/msword, application/x-dos_ms_word, application/vnd.ms-excel ,application/vnd.openxmlformats-officedocument.wordprocessingml.document" />
+                                <span asp-validation-for="ImageCode" class="input-file__info"></span>
+
+                            </div>
+
+
+                        </div>
+                        <div class="form-row">
+                            <lable class="name">4. Fəaliyyət planı</lable>
+                            <p class="actionPlan">
+                                Layihənin fəaliyyət planı müsabiqə qaydalarına uyğun detallı şəkildə tərtib edilərək, bu müraciət
+                                formasına əlavə edilməlidir. Fəaliyyət planına həm keçmiş tədbirlərin fotoşəkilləri və video
+                                çəkilişlərini, həm də planlaşdırdığınız gələcək tədbirlərin prezentasiyası əlavə olunmalıdır.
+                                Bunun üçün müvafiq Google Drive və ya Dropbox link-i aşağıda qeyd edərək və ya müvafiq
+                                sənədləri (keçmiş və gələcək tədbirlər) <a href="#"> qrant@affa.az e-mail</a> ünvanına
+                                <a href="#">(hər e-mail 30 MB-dan çox olmamaq şərti ilə)</a> göndərə bilərsiniz.
+
+                            </p>
+                            <div class="value">
+                                <input asp-for="ActionPlan" class="input--style-6" type="text" required>
+                                <span asp-validation-for="ActionPlan" class="text-danger"></span>
+                            </div>
+                            <div style="margin-top: 12px;" class="custom-file">
+                                <div class="input-group ">
+                                    File Yukle
+                                    <input asp-for="VideoCode" type="file" name="vdfile" required />
+                                    <span asp-validation-for="VideoCode" class="input-file__info"></span>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="name">5. Əlaqə informasiy</div>
+                            <div class="value">
+                                <label style=" padding-left: 19px; font-family: inherit; font-size: 14px; font-weight: 500;">Ad, Soyad və Ata adı</label>
+                                <input asp-for="NameSurnameFatherName" class="input--style-6" type="text" required>
+                                <span asp-validation-for="NameSurnameFatherName" class="text-danger"></span>
+                            </div>
+                            <div class="value">
+                                <label style=" padding-left: 19px; font-family: inherit; font-size: 14px; font-weight: 500;">Əlaqə nömrəsi</label>
+                                <input asp-for="PhoneNumber" class="input--style-6" type="number" required>
+                                <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+                            </div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <label style=" padding-left: 19px; font-family: inherit; font-size: 14px; font-weight: 500;">Email</label>
+                                    <input asp-for="Email" class="input--style-6" type="email" placeholder="example@email.com" required>
+                                    <span asp-validation-for="Email" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="value">
+                                <label style=" padding-left: 19px; font-family: inherit; font-size: 14px; font-weight: 500;">Ünvan</label>
+                                <input asp-for="Address" class="input--style-6" type="text" required>
+                                <span asp-validation-for="Address" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="card-footer">
+
+                            <button class="btn btn--radius-2 btn--blue-2" type="submit" data-toggle="modal" data-target="#exampleModalCenter">Müraciəti göndər</button>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    
+    @if ((int)ViewData["Modal"] == 1)
+    {
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content" style=" height: 250px;">
+
+                <div class="modal-body">
+                    <p style=" text-align: center; font-size: 30px; font-family: cursive; font-weight: 400; color: #09ca09;">Sorgunuz qeyde alinmisdir</p>
+                    <p style=" font-size: 40px; font-family: sans-serif; font-weight: 700; color: green; text-align: center;">TESEKKURLER</p>
+                    <img style=" margin-left: 200px;" src="https://img.icons8.com/fluent/64/000000/completed-task.png" />
+                </div>
+
+            </div>
+        </div>
+    </div>
+    }
+    else if((int)ViewData["Modal"] == 0)
+    {
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content" style=" height: 250px;">
+
+                <div class="modal-body">
+                    <p style=" text-align: center; font-size: 30px; font-family: cursive; font-weight: 400; color: red;">Sorgunuz qeyde alinmamisdir</p>
+                    <p style=" font-size: 40px; font-family: sans-serif; font-weight: 700; color: red; text-align: center;">UGURSUZ CEHT</p>
+                    <img style=" margin-left: 200px;" src="https://img.icons8.com/fluent/48/000000/cancel.png" />
+                </div>
+            </div>
+        </div>
+    </div>
+    }
+
+
+
+
+
+
+
+    <script src="/vendor/jquery/jquery.min.js"></script>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-23581568-13');</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.11/jquery.validate.unobtrusive.min.js"></script>
+</body>
+
+</html>
