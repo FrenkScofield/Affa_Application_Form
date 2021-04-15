@@ -182,7 +182,7 @@
 
                         <div class="card-footer">
 
-                            <button class="btn btn--radius-2 btn--blue-2" type="submit" data-toggle="modal" data-target="#exampleModalCenter">Müraciəti göndər</button>
+                            <button class="btn btn--radius-2 btn--blue-2" type="submit">Müraciəti göndər</button>
                         </div>
                     </form>
                 </div>
@@ -190,38 +190,41 @@
             </div>
         </div>
     </div>
+
+    @if (ViewBag.Modal == 1)
+    {
+        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content" style=" height: 250px;">
+
+                    <div class="modal-body">
+                        <p style=" text-align: center; font-size: 30px; font-family: cursive; font-weight: 400; color: #09ca09;">Sorgunuz qeyde alinmisdir</p>
+                        <p style=" font-size: 40px; font-family: sans-serif; font-weight: 700; color: green; text-align: center;">TESEKKURLER</p>
+                        <img style=" margin-left: 200px;" src="https://img.icons8.com/fluent/64/000000/completed-task.png" />
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <button id="btn-exampleModalCenter" class="btn d-none" data-toggle="modal" data-target="#exampleModalCenter"></button>
+    }
+    else if (ViewBag.Modal == 0)
+    {
+        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content" style=" height: 250px;">
+
+                    <div class="modal-body">
+                        <p style=" text-align: center; font-size: 30px; font-family: cursive; font-weight: 400; color: red;">Sorgunuz qeyde alinmamisdir</p>
+                        <p style=" font-size: 40px; font-family: sans-serif; font-weight: 700; color: red; text-align: center;">UGURSUZ CEHT</p>
+                        <img style=" margin-left: 200px;" src="https://img.icons8.com/fluent/48/000000/cancel.png" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button id="btn-exampleModalCenter" class="btn d-none" data-toggle="modal" data-target="#exampleModalCenter"></button>
+    }
     
-    @if ((int)ViewData["Modal"] == 1)
-    {
-    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content" style=" height: 250px;">
-
-                <div class="modal-body">
-                    <p style=" text-align: center; font-size: 30px; font-family: cursive; font-weight: 400; color: #09ca09;">Sorgunuz qeyde alinmisdir</p>
-                    <p style=" font-size: 40px; font-family: sans-serif; font-weight: 700; color: green; text-align: center;">TESEKKURLER</p>
-                    <img style=" margin-left: 200px;" src="https://img.icons8.com/fluent/64/000000/completed-task.png" />
-                </div>
-
-            </div>
-        </div>
-    </div>
-    }
-    else if((int)ViewData["Modal"] == 0)
-    {
-    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content" style=" height: 250px;">
-
-                <div class="modal-body">
-                    <p style=" text-align: center; font-size: 30px; font-family: cursive; font-weight: 400; color: red;">Sorgunuz qeyde alinmamisdir</p>
-                    <p style=" font-size: 40px; font-family: sans-serif; font-weight: 700; color: red; text-align: center;">UGURSUZ CEHT</p>
-                    <img style=" margin-left: 200px;" src="https://img.icons8.com/fluent/48/000000/cancel.png" />
-                </div>
-            </div>
-        </div>
-    </div>
-    }
 
 
 
@@ -241,8 +244,8 @@
         gtag('js', new Date());
 
         gtag('config', 'UA-23581568-13');</script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.11/jquery.validate.unobtrusive.min.js"></script>
+    @*<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.11/jquery.validate.unobtrusive.min.js"></script>*@
 </body>
 
 </html>

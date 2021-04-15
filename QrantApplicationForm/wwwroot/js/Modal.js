@@ -1,7 +1,6 @@
-﻿$("#exampleModalCenter").on("show.bs.modal", function (e)
-{
-    setTimeout(() => {
-        $("#exampleModalCenter").modal('hide');
-    }, 2000);
-})
+﻿$('#btn-exampleModalCenter').trigger('click');
+
+setTimeout(() => {
+    $("#exampleModalCenter").modal('hide');
+}, 2000);
 

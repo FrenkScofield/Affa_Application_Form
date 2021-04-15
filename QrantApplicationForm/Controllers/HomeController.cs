@@ -43,11 +43,15 @@ namespace QrantApplicationForm.Controllers
         {
             if(id == 1)
             {
-                ViewData["Modal"] = 1;
+               ViewBag.Modal = 1;
             }
-            else
+             else if(id==0)
             {
-                ViewData["Modal"] = 0;
+                ViewBag.Modal = 0;
+            }
+            else if(id==null)
+            {
+                ViewBag.Modal = -1;
             }
             return View();
         }
@@ -94,8 +98,9 @@ namespace QrantApplicationForm.Controllers
                 
                  return RedirectToAction("Index", new { id = 1 });
             }
-           
-            return View();
+
+            return RedirectToAction("Index", new { id = 0 });
+
 
         }
 

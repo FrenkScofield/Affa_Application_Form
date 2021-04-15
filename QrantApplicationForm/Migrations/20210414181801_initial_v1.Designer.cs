@@ -10,8 +10,8 @@ using QrantApplicationForm.Models.DAL;
 namespace QrantApplicationForm.Migrations
 {
     [DbContext(typeof(MyContext))]
-    [Migration("20210414080550_tes_V1")]
-    partial class tes_V1
+    [Migration("20210414181801_initial_v1")]
+    partial class initial_v1
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

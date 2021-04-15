@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace QrantApplicationForm.Migrations
 {
-    public partial class tes_V1 : Migration
+    public partial class initial_v1 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

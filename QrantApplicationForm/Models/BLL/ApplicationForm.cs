@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -34,6 +35,7 @@ namespace QrantApplicationForm.Models.BLL
 
 
         //Contact
+        [Required]
         public string NameSurnameFatherName { get; set; }
         public int PhoneNumber { get; set; }
         public string Email { get; set; }
