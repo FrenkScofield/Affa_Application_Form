@@ -35,7 +35,6 @@ namespace QrantApplicationForm.Models.BLL
 
 
         //Contact
-        [Required]
         public string NameSurnameFatherName { get; set; }
         public int PhoneNumber { get; set; }
         public string Email { get; set; }
